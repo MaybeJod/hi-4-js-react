@@ -42,13 +42,44 @@
     <input type="submit" value="Submit" />
 </form>`;
 
-function centerForm() {
-	const bodyElement = document.querySelector("body");
-	bodyElement.style.margin = "0 auto";
-	bodyElement.style.width = "90dvw";
+//colors
+const colorPrimary = "#ffffff";
+const colorSecondary = "#f95700";
+const colorTextPrimary = colorSecondary;
+const colorTextSecondary = colorPrimary;
+
+// DOM elements
+const bodyElement = document.querySelector("body");
+const formElement = document.querySelector("form");
+const labelElement = document.querySelectorAll("label");
+const inputElement = document.querySelectorAll("input");
+
+function styleBody(bodyElement) {
+	bodyElement.style.padding = "10vw";
+	bodyElement.style.display = "flex";
+	bodyElement.style.justifyContent = "center";
+	bodyElement.style.alignItems = "center";
+	return bodyElement;
 }
 
-//IIFE to start render/painting
-const inti = (() => {
-	centerForm();
-})();
+function styleForm(formElement) {
+	formElement.style.padding = "2rem";
+	formElement.style.backgroundColor = colorPrimary;
+	formElement.style.borderRadius = "50px";
+	formElement.style.border = `1px solid ${colorSecondary}`;
+	formElement.style.display = "flex";
+	formElement.style.flexDirection = "column";
+	return formElement;
+}
+
+function styleInput(inputElement) {
+	inputElement.forEach((input) => {
+		input.style.border = `1px solid ${colorSecondary}`;
+		input.style.borderRadius = "50px";
+		input.style.padding = "1rem";
+	});
+}
+
+styleBody(bodyElement);
+styleForm(formElement);
+styleInput(inputElement);
