@@ -7,7 +7,23 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString(string) {
+	console.log(string);
+	let arr = [...string];
+	let arr2 = [];
+
+	for (let i = string.length - 1; i >= 0; i--) {
+		arr2.push(arr[i]);
+	}
+	arr2 = arr2.join("");
+	console.log(arr2);
+
+	return arr2;
+}
+
+reverseString("hello"); //olleh
+reverseString("world"); //dlrow
+reverseString("12345"); //54321
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -24,12 +40,12 @@ function reverseNumber() {}
  * TODO destruct the following object to get name and age.
  */
 const person = {
-  name: "John",
-  info: {
-    age: 30,
-    city: "New York",
-    job: "Developer",
-  },
+	name: "John",
+	info: {
+		age: 30,
+		city: "New York",
+		job: "Developer",
+	},
 };
 
 /**
