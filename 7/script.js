@@ -60,11 +60,22 @@ const person = {
 	},
 };
 
+const {
+	name,
+	info: { age },
+} = person;
+
+console.log(`${name} is ${age}`);
+
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+
+const [firstItem, secondItem, ...rest] = thisArray;
+
+console.log(`first: ${firstItem}, second: ${secondItem}, rest: ${rest}`);
 
 /**
  * !!!!OPTIONAL!!!!
