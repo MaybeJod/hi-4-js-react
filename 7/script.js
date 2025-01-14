@@ -8,7 +8,6 @@
  *   reverseString("12345") should return "54321"
  */
 function reverseString(string) {
-	console.log(string);
 	let arr = [...string];
 	let arr2 = [];
 
@@ -16,14 +15,13 @@ function reverseString(string) {
 		arr2.push(arr[i]);
 	}
 	arr2 = arr2.join("");
-	console.log(arr2);
 
 	return arr2;
 }
 
-reverseString("hello"); //olleh
-reverseString("world"); //dlrow
-reverseString("12345"); //54321
+console.log(reverseString("hello")); //olleh
+console.log(reverseString("world")); //dlrow
+console.log(reverseString("12345")); //54321
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -33,8 +31,22 @@ reverseString("12345"); //54321
  *   reverseNumber(98765) should return 56789
  *   reverseNumber(101010) should return 010101
  */
+function reverseNumber(numbers) {
+	let numToString = numbers.toString();
+	let arr = [...numToString];
+	let arr2 = [];
 
-function reverseNumber() {}
+	for (let i = numToString.length - 1; i >= 0; i--) {
+		arr2.push(arr[i]);
+	}
+	arr2 = arr2.join("");
+
+	return parseInt(arr2);
+}
+
+console.log(reverseNumber(12345));
+console.log(reverseNumber(98765));
+console.log(reverseNumber(101010));
 
 /**
  * TODO destruct the following object to get name and age.
