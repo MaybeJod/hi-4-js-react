@@ -1,0 +1,236 @@
+:root {
+    --main-white: #ffffff;
+    --main-black: #000000;
+    --max-width:100dvw;
+    --page-padding: 0 6rem 0 6rem;
+    --section-header-fs: 3rem;
+    --section-p-lh: 1.5rem;
+    --table-border-color: #b9b9b9;
+}   
+
+body {
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: var(--main-white);
+    height: 6rem;
+    width: 100vw;
+    padding: var(--page-padding);
+    border-bottom: 1px solid var(--main-black);
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        ul {
+            padding-left: 0;
+            display: flex;
+            gap: 1rem;
+
+            li {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: var(--main-black);
+                    font-size: 1.3rem;
+                }
+                a:hover {
+                    color: #0000ff;
+                }
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+
+    section {
+        width: var(--max-width);
+        padding: var(--page-padding);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-size: var(--section-header-fs);
+        }
+
+        p {
+            line-height: var(--section-p-lh);
+        }
+    }
+
+    #section1 {
+        figure {
+
+            img {
+                border-radius: 2rem;
+                max-width: 90dvw;
+            }
+
+            figcaption {
+                text-align: center;
+                padding: 2rem;
+                font-style: italic;
+            }
+        }
+    }
+
+    #section2 {
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        ol {
+            li {
+                line-height: var(--section-p-lh);
+            }
+        }
+
+        ul {
+            li {
+                line-height: var(--section-p-lh);
+            }
+        }
+    }
+
+    #section3 {
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 30dvw;
+            padding-bottom: 2rem;
+            label {
+                font-size: 1.2rem;
+                font-style: italic;
+                padding: 0.2rem 0 0.2rem 0;
+            }
+
+            input {
+                height: 2rem;
+                border-radius: .5rem;
+                font-size: 1.2rem;
+                border: 1px solid var(--main-black);
+            }
+
+            textarea {
+                border-radius: .5rem;
+                border: 1px solid var(--main-black);
+            }
+        }
+    }
+    
+    #section4 {
+        table {
+            padding: 2rem 2rem;
+            border: 1px solid;
+            border-collapse: collapse;
+
+            caption {
+                font-size: 2rem;
+                padding: 2rem;
+            }
+
+            tr {
+                border: 1px solid var(--table-border-color);
+                text-align: center;
+            } 
+            
+            td {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+
+            thead {
+                tr {
+                    font-size: 1.5rem;
+                    border: 1px solid var(--table-border-color);
+                    th {
+                        padding: 1rem;
+                    }
+                }
+            }
+
+            tfoot {
+                font-style: italic;
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even){background-color: #f2f2f2;}
+            tr:hover {background-color: #ddd;}
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 320px) {
+    /* *{
+        border: 1px solid red;
+    } */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        position: fixed;
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+        nav { 
+            ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        a {
+            font-size: 5rem;
+        }
+    }
+
+    p {
+        width: 90dvw;
+    }
+    h2, h3 {
+        width: 90dvw;
+    }
+
+    #section1 {
+        padding-top: 15rem;
+    }
+
+    ol, ul {
+        width: 90dvw;
+    }
+
+    #section3 {
+
+        form {
+            width: 90dvw;
+            
+        }
+    }
+    
+    table {
+        width: 90dvw;
+    }
+
+
+
+}
