@@ -7,7 +7,21 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString(string) {
+	let arr = [...string];
+	let arr2 = [];
+
+	for (let i = string.length - 1; i >= 0; i--) {
+		arr2.push(arr[i]);
+	}
+	arr2 = arr2.join("");
+
+	return arr2;
+}
+
+console.log(reverseString("hello")); //olleh
+console.log(reverseString("world")); //dlrow
+console.log(reverseString("12345")); //54321
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -17,26 +31,50 @@ function reverseString() {}
  *   reverseNumber(98765) should return 56789
  *   reverseNumber(101010) should return 10101
  */
+function reverseNumber(numbers) {
+	let numToString = numbers.toString();
+	let arr = [...numToString];
+	let arr2 = [];
 
-function reverseNumber() {}
+	for (let i = numToString.length - 1; i >= 0; i--) {
+		arr2.push(arr[i]);
+	}
+	arr2 = arr2.join("");
+
+	return parseInt(arr2);
+}
+
+console.log(reverseNumber(12345));
+console.log(reverseNumber(98765));
+console.log(reverseNumber(101010));
 
 /**
  * TODO destruct the following object to get name and age.
  */
 const person = {
-  name: "John",
-  info: {
-    age: 30,
-    city: "New York",
-    job: "Developer",
-  },
+	name: "John",
+	info: {
+		age: 30,
+		city: "New York",
+		job: "Developer",
+	},
 };
+
+const {
+	name,
+	info: { age },
+} = person;
+
+console.log(`${name} is ${age}`);
 
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+const [firstItem, secondItem, ...rest] = thisArray;
+
+console.log(`first: ${firstItem}, second: ${secondItem}, rest: ${rest}`);
 
 /**
  * !!!!OPTIONAL!!!!
@@ -50,4 +88,25 @@ const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
  *    isPalindrome("coding") should return false
  */
 
-function isPalindrome() {}
+function isPalindrome(palindrome) {
+	//regex s for whitespace and g for global, meaning match all \s
+	let normalizedPalindrome = palindrome
+		.toString()
+		.toLowerCase()
+		.replace(/\s+/g, "");
+
+	let reversedPalindrome = normalizedPalindrome.split("").reverse().join("");
+
+	if (normalizedPalindrome === reversedPalindrome) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+console.log(isPalindrome("mada m "));
+console.log(isPalindrome("Madam"));
+console.log(isPalindrome("hello"));
+console.log(isPalindrome(12321));
+console.log(isPalindrome("race car"));
+console.log(isPalindrome("coding"));
